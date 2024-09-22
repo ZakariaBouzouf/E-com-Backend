@@ -1,14 +1,17 @@
 package com.dezo.e_com.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Address {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
 
   private String street;
@@ -16,6 +19,7 @@ public class Address {
   private int number;
 
   @ManyToOne
+  @JsonIgnore
   private User user;
 
   public Address() {

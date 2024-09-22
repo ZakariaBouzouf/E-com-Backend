@@ -4,27 +4,22 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity(name = "users")
 public class User {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
 
   private String username;
 
   @OneToMany(mappedBy = "user")
-  private List<Address> address;
+  private List<Address> addresses;
 
   public User() {
-  }
-
-  public User(int id, String username, List<Address> address) {
-    this.id = id;
-    this.username = username;
-    this.address = address;
   }
 
   public User(int id, String username) {
@@ -48,25 +43,17 @@ public class User {
     this.username = username;
   }
 
-  // public Address getAddress() {
-  //   return address;
-  // }
-  //
-  // public void setAddress(Address address) {
-  //   this.address = address;
-  // }
-
   @Override
   public String toString() {
     return "User [id=" + id + ", username=" + username +  "]";
   }
 
-  public List<Address> getAddress() {
-    return address;
+  public List<Address> getAddresses() {
+    return addresses;
   }
 
-  public void setAddress(List<Address> address) {
-    this.address = address;
+  public void setAddresses(List<Address> addresses) {
+    this.addresses = addresses;
   }
 
 }

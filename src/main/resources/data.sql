@@ -1,6 +1,6 @@
-INSERT INTO users (id,username) VALUES (1,'dezo')
-INSERT INTO users (id,username) VALUES(2,'Sasuke')
-INSERT INTO users (id,username) VALUES(3,'Goji')
+INSERT INTO users (username) VALUES ('dezo')
+INSERT INTO users (username) VALUES('Sasuke')
+INSERT INTO users (username) VALUES('Goji')
 
-INSERT INTO address (id,street,number,user_id) VALUES(1,'Houria',670,1)
-INSERT INTO address (id,street,number,user_id) VALUES(2,'la siesta',30,1)
+INSERT INTO address (street,number,user_id) VALUES('Houria',670,1)
+INSERT INTO address (street,number,user_id) VALUES('la siesta',30,1)
