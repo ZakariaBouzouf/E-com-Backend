@@ -20,16 +20,16 @@ public class Address {
 
   @ManyToOne
   @JsonIgnore
-  private User user;
+  private UserProfile userProfile;
 
   public Address() {
   }
 
-  public Address(int id, String street, int number, User user) {
+  public Address(int id, String street, int number, UserProfile userProfile) {
     this.id = id;
     this.street = street;
     this.number = number;
-    this.user = user;
+    this.userProfile = userProfile;
   }
 
   public Address(int id, String street, int number) {
@@ -67,11 +67,11 @@ public class Address {
     return "Address [id=" + id + ", street=" + street + ", number=" + number + "]";
   }
 
-  public User getUser() {
-    return user;
+  public UserProfile getUserProfile() {
+    return userProfile;
   }
 
-  public void setUser(User user) {
-    this.user = user;
+  public void setUser(UserProfile userProfile) {
+    this.userProfile = userProfile;
   }
 }
